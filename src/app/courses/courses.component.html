@@ -1,0 +1,19 @@
+<div style="padding: 1.5rem;">
+  <h3>Available Courses: </h3>
+<ul>
+@for(course of courses; track course)
+{
+  <li>
+    <p>Course Name: {{course.courseName}}</p>
+    <p>Course Prize: {{course.coursePrize}}</p>
+  </li>
+}
+@empty {
+  <li>
+    <p>No Courses Available</p>
+  </li>
+}
+</ul>
+
+
+</div>
