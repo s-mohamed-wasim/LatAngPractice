@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
+import { CourseCardComponent } from '../course-card/course-card.component';
 import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [],
+  imports: [CourseCardComponent],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
 })
@@ -17,7 +18,6 @@ export class CoursesComponent {
   constructor(){
     this.courseService.GetCourses().subscribe(courseData => {
       this.courses = courseData;
-      //this.courses = [];
     }, err => {
       console.log(err);
     })
